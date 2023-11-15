@@ -11,7 +11,7 @@ const ProductsCart = ({product}) => {
   const rootId = idString(_id);
 
   const handleDetails = () => {
-    navigate(`/SingleProduct/${rootId}`, {
+    navigate(`/product/${rootId}`, {
       state: {
         item: product,
       }
