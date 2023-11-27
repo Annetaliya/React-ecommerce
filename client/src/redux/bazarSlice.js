@@ -10,7 +10,19 @@ export const bazarSlice = createSlice({
     initialState,
     reducers: {
         addToCart:(state, action) => {
-            state.productData= action.payload;
+            const item = state.productData.find((item) => item._id === action.payload._id
+            );
+
+            if (item) {
+                item.quantity += action.payload.quantity
+            } else {
+
+                state.productData.push(action.payload);
+            }
+            
         }
     }
 })
+
+export const { addToCart } = bazarSlice.actions;
+export default bazarSlice.reducer;
