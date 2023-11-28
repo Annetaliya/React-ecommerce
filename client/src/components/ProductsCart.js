@@ -3,6 +3,7 @@ import { HiArrowRight } from 'react-icons/hi';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/bazarSlice';
+import { ToastContainer, toast } from 'react-toastify';
 
 const ProductsCart = ({product}) => {
 
@@ -53,7 +54,7 @@ const ProductsCart = ({product}) => {
                     quantity: 1,
                     description: product.description,
                   })
-                )
+                ) & toast.success(`${product.title} is added`)
               }
             className='absolute z-20 w-[100px] text-gray-500 hover:text-gray-900
             flex items-center gap-1 transform transalte-x-32 group-hover:translate-x-0
@@ -81,6 +82,19 @@ const ProductsCart = ({product}) => {
         </div>
             
       </div>
+      <ToastContainer
+        position='top-left'
+        autoClose={2000}
+        hideProgressBar={false}
+        newesOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme='dark' 
+      />
+      
     </div>
   )
 }

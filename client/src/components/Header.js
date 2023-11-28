@@ -5,6 +5,7 @@ import cart from '../Assets/grocery-store.png';
 import profile from '../Assets/avatar.png';
 import { Link } from 'react-router-dom';
 
+
 const Header = () => {
   const productData = useSelector((state) => state.bazar.productData);
   return (
@@ -43,19 +44,23 @@ const Header = () => {
               Blog
             </li>
           </ul>
-          <div className='relative'>
-            {/* <img className="w-6" src={cart} alt="cart"/> */}
-            <i class="bi bi-bag"></i>
-            <span className='absolute w-6 top-2 left-0 text-sm flex items-center
-            justify-center font-semibold'>
-              {productData.length}
-            </span>
+          <Link to='/cart'>
+            <div className='relative'>
+              {/* <img className="w-6" src={cart} alt="cart"/> */}
+              <i class="bi bi-bag"></i>
+              <span className='absolute w-6 top-2 left-0 text-sm flex items-center
+              justify-center font-semibold'>
+                {productData.length}
+              </span>
 
-          </div>
+            </div>
+          </Link>
+          
           <img className='w-8 h-8 rounded-full' src={profile} alt="profile" />
           
         </div>
       </div>
+      
         
     </div>
   )
