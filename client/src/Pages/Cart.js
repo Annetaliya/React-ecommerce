@@ -1,6 +1,7 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+
 import Header from '../Assets/Header.jpg';
+import CartItem from '../components/CartItem';
 
 
 const Cart = () => {
@@ -28,6 +29,13 @@ const Cart = () => {
             </p>
 
           </div>
+          <p className='font-title font-semibold flex justify-between mt-6'>
+            Total <span className='text-xl font-bold'>$200</span>
+          </p>
+          <button className='text-base text-white w-full py-3 mt-6 hover:bg-gray-800 duration-300'>
+            Proceed To Checkout
+
+          </button>
 
         </div>
       </div>
