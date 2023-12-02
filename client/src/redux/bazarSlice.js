@@ -22,9 +22,8 @@ export const bazarSlice = createSlice({
             
         },
         deleteItem: (state, action ) => {
-            state.productData = state.productData.filter((item) =>{
-                item._id !== action.payload
-            })
+            state.productData = state.productData.filter((item) =>
+                item._id !== action.payload)
         },
 
         resetCart: (state) => {

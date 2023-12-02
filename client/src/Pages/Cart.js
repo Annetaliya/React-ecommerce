@@ -6,7 +6,7 @@ import CartItem from '../components/CartItem';
 
 const Cart = () => {
   // const productData = useSelector((state) => state.bazar.productData)
-  console.log(product.Data) 
+  // console.log(product.Data) 
   return (
     <div>
       <img src={Header} alt='headerimg' />
