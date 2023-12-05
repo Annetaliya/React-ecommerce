@@ -1,11 +1,20 @@
-import React from 'react';
-
+import React, { useState, useEffect } from 'react';
 import Header from '../Assets/Header.jpg';
 import CartItem from '../components/CartItem';
 
 
 const Cart = () => {
-  // const productData = useSelector((state) => state.bazar.productData)
+  const productData = useSelector((state) => state.bazar.productData);
+  const [totalAmt, setTotalAmt] = useState('');
+
+  useEffect(() => {
+    let price = 0;
+    productData.map((item) =>{
+      price += item.price * item.quantity
+      return price
+    })
+    setTotalAmt(price);
+  }, [])
   // console.log(product.Data) 
   return (
     <div>
@@ -18,7 +27,7 @@ const Cart = () => {
             <p className='flex items-center gap-4 text-base' >
               Subtotal{" "}
               <span className='font-titleFont font-bold text-lg'>
-                $200
+                ${totalAmt}
               </span>
             </p>
             <p className='flex items-start gap-4 text base'> 
@@ -30,7 +39,7 @@ const Cart = () => {
 
           </div>
           <p className='font-title font-semibold flex justify-between mt-6'>
-            Total <span className='text-xl font-bold'>$200</span>
+            Total <span className='text-xl font-bold'>${totalAmt}</span>
           </p>
           <button className='text-base text-white w-full py-3 mt-6 hover:bg-gray-800 duration-300'>
             Proceed To Checkout

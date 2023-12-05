@@ -48,6 +48,7 @@ const CartItem = () => {
                   >
                     -
                   </span>
+                  {item.quantity}
                   <span
                   onClick={() => 
                   dispatch(decrementQuantity({
