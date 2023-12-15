@@ -8,7 +8,7 @@ import {
 } from 'firebase/auth';
 import { ToastContainer, toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
-import { addUser } from '../redux/bazarSlice';
+import { addUser, removeUser } from '../redux/bazarSlice';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
@@ -40,6 +40,7 @@ const Login = () => {
     signOut(auth)
     .then(() => {
       toast.success('Log Out Successfully!');
+      dispatch(removeUser())
       
     })
     .catch((error) => {
