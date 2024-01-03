@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Header from '../Assets/Header.jpg';
 import CartItem from '../components/CartItem';
 import { useSelector } from 'react-redux';
-import stripeCheckout from 'react-stripe-checkout';
 import StripeCheckout from 'react-stripe-checkout';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
