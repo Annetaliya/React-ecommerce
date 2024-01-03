@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import logo from '../Assets/shopware.png'
-import cart from '../Assets/grocery-store.png';
+import cart from '../Assets/shopping-bag.png';
 import profile from '../Assets/avatar.png';
 import { Link } from 'react-router-dom';
 
@@ -47,8 +47,7 @@ const Header = () => {
           </ul>
           <Link to='/cart'>
             <div className='relative'>
-              {/* <img className="w-6" src={cart} alt="cart"/> */}
-              <i class="bi bi-bag"></i>
+              <img className="w-7" src={cart} alt="cart"/>
               <span className='absolute w-6 top-2 left-0 text-sm flex items-center
               justify-center font-semibold'>
                 {productData.length}

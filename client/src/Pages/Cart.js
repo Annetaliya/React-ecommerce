@@ -4,6 +4,8 @@ import CartItem from '../components/CartItem';
 import { useSelector } from 'react-redux';
 import stripeCheckout from 'react-stripe-checkout';
 import StripeCheckout from 'react-stripe-checkout';
+import { ToastContainer, toast } from 'react-toastify';
+import axios from 'axios';
 
 
 const Cart = () => {
@@ -30,9 +32,17 @@ const Cart = () => {
 
     }
   }
+
+  const payment = async(token) => {
+    await axios.post("http://localhost:8000/pay",{
+      amount:totalAmt * 100,
+      token: token,
+    } )
+
+  }
   return (
     <div>
-      <img src={Header} alt='headerimg' />
+      <img className='bg-cover bg-center h-full' src={Header} alt='headerimg' style={{height: '200px', width: '100%'}} />
       <div className='max-w-screen-xl mx-auto py-20 flex'>
         <CartItem />
         <div className='w-1/3 bg-[#fafafa] py-6 px-4'>
@@ -55,18 +65,37 @@ const Cart = () => {
           <p className='font-title font-semibold flex justify-between mt-6'>
             Total <span className='text-xl font-bold'>${totalAmt}</span>
           </p>
-          <button onclick={handleCheckout}
+          <button onClick={handleCheckout}
           className='text-base text-white w-full py-3 mt-6 hover:bg-gray-800 duration-300'>
             Proceed To Checkout
           </button>
-          {payNOw && 
+          {payNOw && (
             <div>
-              <StripeCheckout />
+              <StripeCheckout
+              stripeKey='pk_test_51OKIJQEnnAkds4ruDMGmJ4yAEa0c0hpJjqFfKBEYFWQFjtUIpVbNauiV5dtCh8prWE2AG73Bfr0adDRjkPMSTUoU00MSKij4AD'
+              name='Bazar Online Shopping'
+              label='Pay to bazar'
+              description={`Your Payment amount is $${totalAmt}`}
+              token={payment}
+              email={userInfo.email}
+              />
             </div>
-          }
+          )}
 
         </div>
       </div>
+      <ToastContainer
+          position='top-left'
+          autoClose={2000}
+          hideProgressBar={false}
+          newesOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme='dark' 
+      />
       
     </div>
   )
