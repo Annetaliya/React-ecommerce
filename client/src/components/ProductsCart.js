@@ -41,8 +41,8 @@ const ProductsCart = ({product}) => {
           <div className='flex justify-end gap-2 relative overflow-hidden w-28 text-sm'>
             <div className='flex gap-2 transform group-hover:translate-x-24
             transition-transform duration-500'>
-              <p className='line-through text-gray-500'>${product.oldPrice}</p>
-              <p className='font-semibold'>${product.price}</p>
+              <p className='line-through text-gray-500 mt-3'>${product.oldPrice}</p>
+              <p className='font-semibold mt-5'>${product.price}</p>
             </div>
             <p onClick={() => 
                 dispatch(

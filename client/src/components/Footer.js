@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../Assets/shopware.png';
+import logo from '../Assets/letter-n.png';
 import paypal from '../Assets/paypal.png';
 import visa from '../Assets/visa.png';
 import youtube from '../Assets/youtube.png';
@@ -26,24 +26,24 @@ const Footer = () => {
                 <img className='h-14'src={visa} alt='visa'/>
                 <img className='h-20' src={amazon} alt='amazon'/>
 
-                </div>
-                <div className='flex gap-5'>
-                  <img className='h-6' src={youtube} alt="youtube" />
-                  <img className='h-6' src={instagram} alt="instagram" />
-                  <img className='h-6' src={facebook} alt="facebook" />
-                  <img className='h-6' src={twitter} alt="twitter" />
+            </div>
+            <div className='flex gap-5'>
+              <img className='h-6' src={youtube} alt="youtube" />
+              <img className='h-6' src={instagram} alt="instagram" />
+              <img className='h-6' src={facebook} alt="facebook" />
+              <img className='h-6' src={twitter} alt="twitter" />
 
-                </div>
-                <div>
-                  <h2 className='text-2xl font-semibold text-white mb-4'>Locate us</h2>
-                  <div className='text-base flex flex-col gap-2'>
-                    <p>Shopping, Delights, Nairobi</p>
-                    <p>Mobile: 00968 97656026</p>
-                    <p>Phone: 00968 456888996</p>
-                    <p>e-mail: delights@gmail.com</p>
-                  </div>
+            </div>
+            <div>
+              <h2 className='text-2xl font-semibold text-white mb-4'>Locate us</h2>
+              <div className='text-base flex flex-col gap-2'>
+                <p>Shopping, Delights, Nairobi</p>
+                <p>Mobile: 00968 97656026</p>
+                <p>Phone: 00968 456888996</p>
+                <p>e-mail: delights@gmail.com</p>
+              </div>
 
-                </div>
+            </div>
                 <div>
                   <h2 className='text-2xl font-semibold text-white mb-4'>profile</h2>
                   <p className='flex items-center gap-3 hover:text-white duration-300 cursor-pointer'>

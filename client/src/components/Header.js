@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import logo from '../Assets/shopware.png'
+import logo from '../Assets/letter-n.png'
 import cart from '../Assets/shopping-bag.png';
 import profile from '../Assets/avatar.png';
 import { Link } from 'react-router-dom';
