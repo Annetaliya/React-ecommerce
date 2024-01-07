@@ -20,7 +20,7 @@ const Cart = () => {
       return price
     })
     setTotalAmt(price);
-  }, [])
+  }, [productData])
   // console.log(product.Data) 
   const handleCheckout = () => {
     if (userInfo) {
